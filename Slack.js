@@ -38,7 +38,10 @@ function Slack() {
      * A function that sends a single message to the Slack API via a web hook.
      * @param {String} senderInfo Info about the sender, name and company name in a single string
      * @param {String} label name of the label where the sender's email came from
-     * @returns 
+     * @returns {String or Boolean} returns the id of the Gmail message that was just being processed if the message was successfully sent, false otherwise.
+     * 
+     * _sendMessage(["56386589", "Bastien Velitchkine de Payfit"], "Funky Label")
+     * // => "56386589";
      */
     function _sendMessage(senderInfo, label){
         const url = secret()["slackHook"];
