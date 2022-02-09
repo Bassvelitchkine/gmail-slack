@@ -6,7 +6,7 @@ function main() {
     const slack = Slack();
     const sheet = SheetInterface();
   
-    const monitoredLabels = Object.values(globalVariables()["MAILBOX"]);
+    const monitoredLabels = globalVariables()["MAILBOX"];
     const toExclude = sheet.getProcessedMessages();
   
     // We run through every label to monitor in the mailbox, looking for unread messages
